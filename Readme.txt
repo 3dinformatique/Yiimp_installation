@@ -7,4 +7,4 @@ sudo apt install git
 cd && git clone https://github.com/3dinformatique/Yiimp_installation.git
 cd Yiimp_installation
 chmod +x runinstall.sh
-bash runinstall.sh
+bash runinstall_Ubuntu18.sh
