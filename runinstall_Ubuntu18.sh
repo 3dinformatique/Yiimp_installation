@@ -78,16 +78,16 @@
     echo
     echo -e "$RED Make sure you double check before hitting enter! Only one shot at these! $COL_RESET"
     echo
-    read -e -p "Enter time zone (e.g. America/New_York) : " TIME
-    read -e -p "Nom de domaine (example.com ou pool.example.com ou $PUBLIC_IP ou $PRIVATE_IP1(si interne)) : " server_name
+    read -e -p "Enter time zone (e.g. America/Toronto) : " TIME
+    read -e -p "Domain name (example.com ou pool.example.com ou $PUBLIC_IP ou $PRIVATE_IP1(for internal usage)) : " server_name
     read -e -p "Are you using a subdomain (mycryptopool.example.com?) [y/N] : " sub_domain
     read -e -p "Enter support email (e.g. admin@example.com) : " EMAIL
     read -e -p "Set Pool to AutoExchange? i.e. mine any coin with BTC address? [y/N] : " BTC
     #read -e -p "Please enter a new location for /site/adminRights this is to customize the Admin Panel entrance url (e.g. myAdminpanel) : " admin_panel
-    read -e -p "Donner l'IP de votre modem ($PUBLIC_IP) ou si usage interne, l'adresse IP privé de votre PC du quel vous allez administrer ($PRIVATE_IP1) : " Public
-    read -e -p "Installer Fail2ban? [Y/n] : " install_fail2ban
-    read -e -p "Installer UFW and configurer les ports? [Y/n] : " UFW
-    read -e -p "Install LetsEncrypt SSL? IMPORTANT! You MUST have your domain name pointed to this server prior to running the script!! [Y/n]: " ssl_install
+    read -e -p "Your extern IP ($PUBLIC_IP) OR for interne usage, your PC IP address from which you'll admin yiimp ($PRIVATE_IP1) (you can also add /24) : " Public
+    read -e -p "Install Fail2ban? [Y/n] : " install_fail2ban
+    read -e -p "Install UFW and configure ports? [Y/n] : " UFW
+    read -e -p "Install LetsEncrypt SSL? IMPORTANT! You MUST have your domain name pointed to this server prior to running the script!! [y/N]: " ssl_install
     
     
     # Switch Aptitude
@@ -526,7 +526,7 @@
     sudo systemctl restart nginx.service
     echo -e "$GREEN Done...$COL_RESET"
     	
-    if [[ ("$ssl_install" == "y" || "$ssl_install" == "Y" || "$ssl_install" == "") ]]; then
+    if [[ ("$ssl_install" == "y" || "$ssl_install" == "Y") ]]; then
 
     
     # Install SSL (with SubDomain)
@@ -737,7 +737,7 @@
     echo -e "$GREEN Done...$COL_RESET"
    
 	
-    if [[ ("$ssl_install" == "y" || "$ssl_install" == "Y" || "$ssl_install" == "") ]]; then
+    if [[ ("$ssl_install" == "y" || "$ssl_install" == "Y") ]]; then
     
     # Install SSL (without SubDomain)
     echo
