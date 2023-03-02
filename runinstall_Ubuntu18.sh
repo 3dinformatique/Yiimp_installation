@@ -1003,8 +1003,8 @@
     define('"'"'YAAMP_FEES_RENTING'"'"', 2);
     define('"'"'YAAMP_TXFEE_RENTING_WD'"'"', 0.002);
     
-    define('"'"'YAAMP_PAYMENTS_FREQ'"'"', 2*60*60);
-    define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.001);
+    define('"'"'YAAMP_PAYMENTS_FREQ'"'"', 24*60*60);
+    define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.002);
     
     define('"'"'YAAMP_ALLOW_EXCHANGE'"'"', false);
     define('"'"'YIIMP_PUBLIC_EXPLORER'"'"', true);
