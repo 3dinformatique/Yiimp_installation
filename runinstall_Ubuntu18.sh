@@ -981,7 +981,7 @@
     echo '
     <?php
 
-    ini_set('"'"'date.timezone'"'"', '"'"'"${TIME}"'"'"');
+    ini_set('"'"'date.timezone'"'"', '"'"'${TIME}'"'"');
 
     define('"'"'YAAMP_LOGS'"'"', '"'"'/var/log/yiimp'"'"');
     define('"'"'YAAMP_HTDOCS'"'"', '"'"'/var/web'"'"');
@@ -1015,7 +1015,7 @@
     
     define('"'"'YAAMP_BTCADDRESS'"'"', '"'"'1C1hnjk3WhuAvUN6Ny6LTxPD3rwSZwapW7'"'"');
     
-    define('"'"'YAAMP_SITE_URL'"'"', '"'"''"${server_name}"''"'"');
+    define('"'"'YAAMP_SITE_URL'"'"', '"'"''${server_name}''"'"');
     define('"'"'YAAMP_STRATUM_URL'"'"', YAAMP_SITE_URL); // change if your stratum server is on a different host
     define('"'"'YAAMP_SITE_NAME'"'"', '"'"'"${server_name}"'"'"');
     define('"'"'YAAMP_ADMIN_EMAIL'"'"', '"'"''"${EMAIL}"''"'"');
