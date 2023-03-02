@@ -1192,3 +1192,5 @@
     echo -e "$RED***************************************************$COL_RESET"
     echo
     echo
+    
+	sudo reboot
