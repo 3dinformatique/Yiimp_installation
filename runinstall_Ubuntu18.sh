@@ -78,7 +78,7 @@
     echo
     echo -e "$RED Make sure you double check before hitting enter! Only one shot at these! $COL_RESET"
     echo
-    #read -e -p "Enter time zone (e.g. America/New_York) : " TIME
+    read -e -p "Enter time zone (e.g. America/New_York) : " TIME
     read -e -p "Nom de domaine (example.com ou pool.example.com ou $PUBLIC_IP ou $PRIVATE_IP1(si interne)) : " server_name
     read -e -p "Are you using a subdomain (mycryptopool.example.com?) [y/N] : " sub_domain
     read -e -p "Enter support email (e.g. admin@example.com) : " EMAIL
@@ -424,12 +424,9 @@
     echo -e "$CYAN => Update default timezone. $COL_RESET"
     echo
     
-    echo -e " Setting TimeZone to UTC...$COL_RESET"
-    if [ ! -f /etc/timezone ]; then
-    echo "Setting timezone to UTC."
-    echo "Etc/UTC" > sudo /etc/timezone
+    echo -e " Setting TimeZone to $TIME...$COL_RESET"
+    sudo timedatectl set-timezone $TIME
     sudo systemctl restart rsyslog
-    fi
     sudo systemctl status rsyslog | sed -n "1,3p"
     echo
     echo -e "$GREEN Done...$COL_RESET"
