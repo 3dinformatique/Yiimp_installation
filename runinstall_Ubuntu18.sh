@@ -981,7 +981,7 @@
     echo '
     <?php
 
-    ini_set('"'"'date.timezone'"'"', '"'"'UTC'"'"');
+    ini_set('"'"'date.timezone'"'"', '"'"'"${TIME}"'"'"');
 
     define('"'"'YAAMP_LOGS'"'"', '"'"'/var/log/yiimp'"'"');
     define('"'"'YAAMP_HTDOCS'"'"', '"'"'/var/web'"'"');
@@ -1017,7 +1017,7 @@
     
     define('"'"'YAAMP_SITE_URL'"'"', '"'"''"${server_name}"''"'"');
     define('"'"'YAAMP_STRATUM_URL'"'"', YAAMP_SITE_URL); // change if your stratum server is on a different host
-    define('"'"'YAAMP_SITE_NAME'"'"', '"'"'YIIMP'"'"');
+    define('"'"'YAAMP_SITE_NAME'"'"', '"'"'"${server_name}"'"'"');
     define('"'"'YAAMP_ADMIN_EMAIL'"'"', '"'"''"${EMAIL}"''"'"');
     define('"'"'YAAMP_ADMIN_IP'"'"', '"'"''"${Public}"''"'"'); // samples: "80.236.118.26,90.234.221.11" or "10.0.0.1/8"
     
@@ -1063,7 +1063,7 @@
     $configFixedPoolFees = array(
         '"'"'zr5'"'"' => 2.0,
         '"'"'scrypt'"'"' => 20.0,
-        '"'"'sha256'"'"' => 5.0,
+        '"'"'sha256'"'"' => 2.0,
      );
     
     // Sample custom stratum ports
